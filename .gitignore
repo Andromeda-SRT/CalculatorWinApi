@@ -1,0 +1,5 @@
+.gitattributes
+*.exe
+*.o
+*.layout
+*.res

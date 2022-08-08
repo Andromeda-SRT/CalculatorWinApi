@@ -1,0 +1,24 @@
+#define STATIC_1 4020
+#define EDIT_1 4021
+
+#define BUTTON_0 1000
+#define BUTTON_1 1001
+#define BUTTON_2 1002
+#define BUTTON_3 1003
+#define BUTTON_4 1004
+#define BUTTON_5 1005
+#define BUTTON_6 1006
+#define BUTTON_7 1007
+#define BUTTON_8 1008
+#define BUTTON_9 1009
+#define BUTTON_10 1010
+#define BUTTON_11 1011
+#define BUTTON_12 1012
+#define BUTTON_13 1013
+#define BUTTON_14 1014
+#define BUTTON_15 1015
+#define BUTTON_16 1016
+#define BUTTON_17 1017
+#define BUTTON_18 1018
+#define BUTTON_19 1019
+#define BUTTON_20 1020
