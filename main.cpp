@@ -1,15 +1,12 @@
 #include <iostream>
-#include <windows.h> //т.к #include<TCHAR.H> (Используется)
-//#include<TCHAR.H> //Для работы в "Большей" универсальной манере UTF16 TCHAR (Отброшено)
+#include <windows.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <locale.h>
-//#include <cstdlib>
 #include "grid_seting.cpp"
+#include "Calculator.h"
 
 /* This is where all the input to the window goes to */
-
-
 
 
 int btnWidth,btnHeight,StaticAndEditWidth,StaticAndEditHeight = 0;
@@ -72,8 +69,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		return 0;
 	}
 
-//	btnWidth = (XwindowWidth / 4); StaticAndEditWidth = (XwindowWidth / 4);
-//	btnHeight= (YwindowHeight / 6) - ( StaticAndEditHeight / 2 ); StaticAndEditHeight = (YwindowHeight / 6);
 	btnWidth = (XwindowWidth / 4);
 	StaticAndEditWidth = (XwindowWidth / 4);
 	btnHeight= (YwindowHeight / 6);
@@ -112,13 +107,13 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 				snprintf(ch, sizeof ch, "%i", numberBtnTxt);
 
 				countBtn ++;
-
+				int btnID = BUTTON_0 + countBtn;
 				hButton[countBtn] = CreateWindow("BUTTON",ch,WS_VISIBLE|WS_CHILD|BS_PUSHBUTTON,
 				                                 (btnWidth * j), /* x */
 				                                 (btnHeight * i), /* y */
 				                                 btnWidth, /* width */
 				                                 btnHeight, /* height */
-				                                 hwnd,(HMENU)(BUTTON_0+countBtn),NULL,NULL); //hwnd главное окно,  (HMENU) - дискриптор на макрос EDIT_1, который был создан ранее.
+				                                 hwnd,(HMENU)btnID,NULL,NULL); //hwnd главное окно,  (HMENU) - дискриптор на макрос EDIT_1, который был создан ранее.
 
 				numberBtnTxt --;
 			}

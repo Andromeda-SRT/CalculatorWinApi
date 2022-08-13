@@ -5,8 +5,8 @@ CPP      = g++.exe -D__DEBUG__
 CC       = gcc.exe -D__DEBUG__
 WINDRES  = windres.exe
 RES      = CalculatorWinApi_private.res
-OBJ      = grid_seting.o main.o $(RES)
-LINKOBJ  = grid_seting.o main.o $(RES)
+OBJ      = grid_seting.o main.o Calculator.o Expression.o Argument.o operations.o $(RES)
+LINKOBJ  = grid_seting.o main.o Calculator.o Expression.o Argument.o operations.o $(RES)
 LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -mwindows -g3
 INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
 CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
@@ -30,6 +30,18 @@ grid_seting.o: grid_seting.cpp
 
 main.o: main.cpp
 	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Calculator.o: Calculator.cpp
+	$(CPP) -c Calculator.cpp -o Calculator.o $(CXXFLAGS)
+
+Expression.o: Expression.cpp
+	$(CPP) -c Expression.cpp -o Expression.o $(CXXFLAGS)
+
+Argument.o: Argument.cpp
+	$(CPP) -c Argument.cpp -o Argument.o $(CXXFLAGS)
+
+operations.o: operations.cpp
+	$(CPP) -c operations.cpp -o operations.o $(CXXFLAGS)
 
 CalculatorWinApi_private.res: CalculatorWinApi_private.rc 
 	$(WINDRES) -i CalculatorWinApi_private.rc --input-format=rc -o CalculatorWinApi_private.res -O coff 
